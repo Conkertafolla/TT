@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TT</string>
+    <string name="gestionar_usuarios">Gestionar usuarios</string>
+    <string name="gestionar_adulto_mayor">Gestionar adulto mayor</string>
+    <string name="monitoreo_de_temperatura">Monitoreo de temperatura</string>
+    <string name="supervisi_n_adulto_mayor">Supervisión adulto mayor</string>
+    <string name="control_de_iluminaci_n">Control de iluminación</string>
+    <string name="logo">TODO</string>
+    <string name="registrar">Registrar</string>
+    <string name="nombre">Nombre</string>
+
+
+</resources>
