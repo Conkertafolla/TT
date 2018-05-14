@@ -29,7 +29,9 @@
     <string name="formato_fecha">dd/mm/yyyy</string>
     <string name="formato_hora">hh:mm</string>
     <string name="fecha_de_nacimiento">Fecha de nacimiento</string>
-
+    <string name="masculino">Masculino</string>
+    <string name="femenino">Femenino</string>
+    <string name="sexo">Sexo</string>
 
 
 </resources>

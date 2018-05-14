@@ -19,89 +19,151 @@
         android:textColor="@color/colorTexto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-         />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
+    <LinearLayout
+        android:id="@+id/Registro_AM"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="289dp"
+        tools:layout_editor_absoluteY="0dp">
 
-        <LinearLayout
-            android:id="@+id/Registro_AM"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-            <android.support.design.widget.TextInputLayout android:layout_height="wrap_content" android:layout_width="wrap_content">
-
-                <EditText
-                    android:id="@id/nombre"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:imeOptions="actionNext"
-                    android:inputType="textPersonName"
-                    android:labelFor="@+id/nombre"
-                    android:hint="@string/nombre"
-                    />
-
-            </android.support.design.widget.TextInputLayout>
-
-
-
-
-            <android.support.design.widget.TextInputLayout android:layout_height="wrap_content" android:layout_width="wrap_content">
             <EditText
-                android:id="@+id/apellidoPaterno"
-                android:layout_width="match_parent"
+                android:id="@id/nombre"
+                android:layout_width="375dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
+                android:hint="@string/nombre"
                 android:imeOptions="actionNext"
-                android:labelFor="@+id/apellidoPaterno"
-                android:hint="@string/apellido_paterno"
-                />
-            </android.support.design.widget.TextInputLayout>
+                android:inputType="textPersonName"
+                android:labelFor="@+id/nombre" />
 
-            <android.support.design.widget.TextInputLayout android:layout_height="wrap_content" android:layout_width="wrap_content">
-            <EditText
-                android:id="@+id/apellidoMaterno"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:imeOptions="actionNext"
-                android:labelFor="@+id/apellidoMaterno"
-                android:hint="@string/apellido_materno"/>
         </android.support.design.widget.TextInputLayout>
 
-            <ImageButton
-                android:id="@+id/selFec"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:imeOptions="actionNext"
-                app:srcCompat="@drawable/baseline_calendar_today_black_18dp2"
-                app:layout_constraintRight_toRightOf="parent"
-                tools:ignore="ContentDescription"
-                />
-            <android.support.design.widget.TextInputLayout android:layout_height="wrap_content" android:layout_width="wrap_content">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/fecha_AM"
-                android:layout_width="196dp"
+                android:id="@+id/apellidoPaterno"
+                android:layout_width="394dp"
                 android:layout_height="wrap_content"
-                android:clickable="false"
                 android:ems="10"
-                android:focusable="true"
+                android:hint="@string/apellido_paterno"
                 android:imeOptions="actionNext"
-                android:inputType="date"
-                android:labelFor="@id/fecha_AM"
-                android:maxLines="1"
-                android:text="@string/fecha_de_nacimiento"
-                android:editable="false"/>
+                android:inputType="textPersonName"
+                android:labelFor="@+id/apellidoPaterno" />
+        </android.support.design.widget.TextInputLayout>
 
-            </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-        </LinearLayout>
+            <EditText
+                android:id="@+id/apellidoMaterno"
+                android:layout_width="373dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/apellido_materno"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:labelFor="@+id/apellidoMaterno" />
+        </android.support.design.widget.TextInputLayout>
 
+
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/sexo_AM"
+        android:layout_width="352dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="95dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="17dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/Registrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Registro_AM">
+
+        <TextView
+            android:layout_width="52dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/sexo"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        <RadioButton
+            android:id="@+id/sexM"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/masculino" />
+
+        <RadioButton
+            android:id="@+id/sexF"
+            android:layout_width="138dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/femenino" />
+
+    </RadioGroup>
+
+    <RelativeLayout
+        android:layout_width="361dp"
+        android:layout_height="66dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="161dp">
+
+        <EditText
+            android:id="@+id/fecha_AM"
+            android:layout_width="196dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/selFec"
+            android:layout_marginStart="45dp"
+            android:layout_toEndOf="@+id/selFec"
+            android:clickable="false"
+            android:ems="10"
+            android:focusable="true"
+            android:imeOptions="actionNext"
+            android:inputType="date"
+            android:labelFor="@id/fecha_AM"
+            android:maxLines="1"
+            android:text="@string/fecha_de_nacimiento" />
+
+        <ImageButton
+            android:id="@+id/selFec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            app:layout_constraintRight_toRightOf="parent"
+            app:srcCompat="@drawable/baseline_calendar_today_black_18dp2"
+            tools:ignore="ContentDescription" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="344dp"
+        android:layout_height="39dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="309dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:text="TextView" />
+    </RelativeLayout>
 
 
 </android.support.constraint.ConstraintLayout>

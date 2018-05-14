@@ -10,6 +10,9 @@ import android.widget.CalendarView;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+
 
 import java.util.Calendar;
 
@@ -17,6 +20,9 @@ public class registrarAdulto extends AppCompatActivity implements View.OnClickLi
     private static final String CERO = "0";
     private static final String BARRA = "/";
     public final Calendar c = Calendar.getInstance();
+    private RadioGroup sexR;
+    private RadioButton masculino;
+    private RadioButton femenino;
 
     final int dia= c.get(Calendar.DAY_OF_MONTH);
     final int mes= c.get(Calendar.MONTH);
@@ -32,6 +38,21 @@ public class registrarAdulto extends AppCompatActivity implements View.OnClickLi
         etFecha=(EditText) findViewById(R.id.fecha_AM);
         obtenerFecha=(ImageButton) findViewById(R.id.selFec);
         obtenerFecha.setOnClickListener(this);
+        sexR=(RadioGroup)findViewById(R.id.sexo_AM);
+        masculino= (RadioButton) findViewById(R.id.sexM);
+        femenino= (RadioButton) findViewById(R.id.sexF);
+
+        sexR.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if(i==R.id.sexM){
+                    //femenino.setEnabled(false);
+                }
+                if(i==R.id.sexF){
+                    //masculino.setEnabled(false);
+                }
+            }
+        });
     }
 
     public void onClick(View v) {
@@ -54,6 +75,8 @@ public class registrarAdulto extends AppCompatActivity implements View.OnClickLi
         },ano,mes,dia);
         recogerFecha.show();
     }
+
+
 
 
 
