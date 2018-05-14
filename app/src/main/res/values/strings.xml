@@ -22,6 +22,14 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="logotipo">TODO</string>
+    <string name="nombre_adulto_mayor">Nombre adulto mayor</string>
+    <string name="apellido_paterno">Apellido paterno</string>
+    <string name="apellido_materno">Apellido materno</string>
+    <string name="formato_fecha">dd/mm/yyyy</string>
+    <string name="formato_hora">hh:mm</string>
+    <string name="fecha_de_nacimiento">Fecha de nacimiento</string>
+
 
 
 </resources>

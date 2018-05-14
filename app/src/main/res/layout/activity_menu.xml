@@ -71,6 +71,6 @@
         android:layout_marginStart="8dp"
         app:layout_constraintBottom_toTopOf="@+id/supervision"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo" android:contentDescription="@string/logotipo" />
 
 </android.support.constraint.ConstraintLayout>
