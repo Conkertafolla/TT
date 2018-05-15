@@ -1,37 +1,19 @@
 package com.example.conke.tt;
 
 import android.app.DatePickerDialog;
-import android.content.Intent;
-import android.os.Build;
-import android.provider.MediaStore;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.CalendarView;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ListView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 
-
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 
-public class registrarAdulto extends AppCompatActivity implements View.OnClickListener{
+public class registro_adulto_encargado extends AppCompatActivity implements View.OnClickListener{
     private static final String CERO = "0";
     private static final String BARRA = "/";
-    private static final int PICK_IMAGE = 100;
     public final Calendar c = Calendar.getInstance();
-    private RadioGroup sexR;
-    private RadioButton masculino;
-    private RadioButton femenino;
-    private ImageButton fotoAM;
-
     final int dia= c.get(Calendar.DAY_OF_MONTH);
     final int mes= c.get(Calendar.MONTH);
     final int ano= c.get(Calendar.YEAR);
@@ -42,30 +24,20 @@ public class registrarAdulto extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registrar_adulto);
-        etFecha= findViewById(R.id.fecha_AM);
-        obtenerFecha= findViewById(R.id.selFec);
-        obtenerFecha.setOnClickListener(this);
-        sexR= findViewById(R.id.sexo_AM);
-        masculino= findViewById(R.id.sexM);
-        femenino= findViewById(R.id.sexF);
-        fotoAM= findViewById(R.id.foto_AM);
-        fotoAM.setOnClickListener(this);
-
+        setContentView(R.layout.activity_registro_adulto_encargado);
+        etFecha= findViewById(R.id.fecha_AE);
+        obtenerFecha= findViewById(R.id.selFAE);
+        obtenerFecha.setOnClickListener((View.OnClickListener) this);
     }
 
+    @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.selFec:
+            case R.id.selFAE:
                 obtenerFecha();
                 break;
-            case R.id.foto_AM:
-                Intent galeria = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-                startActivityForResult(galeria,PICK_IMAGE);
-                break;
-            }
         }
-
+    }
 
     private void obtenerFecha(){
         DatePickerDialog recogerFecha = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
@@ -79,10 +51,4 @@ public class registrarAdulto extends AppCompatActivity implements View.OnClickLi
         },ano,mes,dia);
         recogerFecha.show();
     }
-
-
-
-
-
-
 }

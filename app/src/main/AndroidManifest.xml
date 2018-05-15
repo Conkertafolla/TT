@@ -22,7 +22,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".registrarAdulto" />
-        <activity android:name=".LoginActivity"/>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".registro_adulto_encargado"></activity>
     </application>
 
 </manifest>
