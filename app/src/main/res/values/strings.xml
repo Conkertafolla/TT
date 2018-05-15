@@ -32,6 +32,12 @@
     <string name="masculino">Masculino</string>
     <string name="femenino">Femenino</string>
     <string name="sexo">Sexo</string>
+    <string name="agregar_foto">Agregar foto</string>
+    <string name="agregar_fotograf_a">Agregar fotografía</string>
+    <string name="enfermedades">Enfermedades</string>
+    <string name="enfermedad">Enfermedad</string>
+    <string name="enfermedad_AM">Enfermedad</string>
+    <string name="enfermedadText">enfermedad</string>
 
 
 </resources>
