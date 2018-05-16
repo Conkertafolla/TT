@@ -43,6 +43,12 @@
     <string name="correo_electronico">Correo electronico</string>
     <string name="n_mero_telefonico">Número telefonico</string>
     <string name="contrase_a">Contraseña</string>
+    <string name="comedor">Comedor</string>
+    <string name="estudio">Estudio</string>
+    <string name="dormitorio">Dormitorio             </string>
+    <string name="dormitorio_2">Dormitorio 2          </string>
+    <string name="sala">Sala        </string>
+    <string name="ba_o">Baño        </string>
 
 
 </resources>

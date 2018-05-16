@@ -25,6 +25,7 @@ public class registro_adulto_encargado extends AppCompatActivity implements View
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_adulto_encargado);
+        setTitle("Registrar adulto encargado");
         etFecha= findViewById(R.id.fecha_AE);
         obtenerFecha= findViewById(R.id.selFAE);
         obtenerFecha.setOnClickListener((View.OnClickListener) this);

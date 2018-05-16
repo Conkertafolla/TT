@@ -43,6 +43,7 @@ public class registrarAdulto extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_adulto);
+        setTitle("Registrar adulto mayor");
         etFecha= findViewById(R.id.fecha_AM);
         obtenerFecha= findViewById(R.id.selFec);
         obtenerFecha.setOnClickListener(this);

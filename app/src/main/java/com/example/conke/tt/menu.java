@@ -9,6 +9,7 @@ import android.widget.Button;
 public class menu extends AppCompatActivity {
 Button gestionarAdultos;
 Button getGestionarEncargado;
+Button control;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,6 +17,7 @@ Button getGestionarEncargado;
         setContentView(R.layout.activity_menu);
         gestionarAdultos = findViewById(R.id.gestionarAdultos);
         getGestionarEncargado = findViewById(R.id.gestionarUsuarios);
+        control=findViewById(R.id.iluminacion);
         gestionarAdultos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -27,6 +29,13 @@ Button getGestionarEncargado;
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(menu.this,registro_adulto_encargado.class);
+                startActivity(i);
+            }
+        });
+        control.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(menu.this,control_Iluminacion.class);
                 startActivity(i);
             }
         });

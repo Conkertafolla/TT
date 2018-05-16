@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.conke.tt.control_Iluminacion">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout5"
+        android:layout_width="344dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="442dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/dormitorio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="11dp"
+            android:layout_marginEnd="75dp"
+            android:text="@string/dormitorio"
+            tools:layout_editor_absoluteX="352dp"
+            tools:layout_editor_absoluteY="28dp"
+            android:showText="false"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout6"
+        android:layout_width="344dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="379dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout5">
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/dormitorio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="80dp"
+            android:text="@string/dormitorio_2"
+            tools:layout_editor_absoluteX="352dp"
+            tools:layout_editor_absoluteY="28dp"
+            android:showText="false"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout7"
+        android:layout_width="344dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="316dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout6">
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/sala"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="80dp"
+            android:text="@string/sala"
+            tools:layout_editor_absoluteX="352dp"
+            tools:layout_editor_absoluteY="28dp"
+            android:showText="false"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout8"
+        android:layout_width="344dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="253dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout7">
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/comedor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="80dp"
+            android:text="@string/comedor"
+            tools:layout_editor_absoluteX="352dp"
+            tools:layout_editor_absoluteY="28dp"
+            android:showText="false"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout9"
+        android:layout_width="344dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="190dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout8">
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/estudio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="80dp"
+            android:text="@string/estudio"
+            tools:layout_editor_absoluteX="352dp"
+            tools:layout_editor_absoluteY="28dp"
+            android:showText="false"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="344dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="127dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout9">
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/banio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="80dp"
+            android:text="@string/ba_o"
+            tools:layout_editor_absoluteX="352dp"
+            tools:layout_editor_absoluteY="28dp"
+            android:showText="false"/>
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
