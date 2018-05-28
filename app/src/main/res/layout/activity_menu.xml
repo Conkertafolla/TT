@@ -24,53 +24,43 @@
         android:layout_height="41dp"
         android:layout_marginTop="3dp"
         android:text="@string/gestionar_adulto_mayor"
-        app:layout_constraintBottom_toTopOf="@+id/iluminacion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gestionarUsuarios" />
 
     <Button
-        android:id="@+id/monitoreo_temperatura"
-        android:layout_width="378dp"
-        android:layout_height="41dp"
-        android:layout_marginBottom="109dp"
-        android:layout_marginStart="3dp"
-        android:text="@string/monitoreo_de_temperatura"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iluminacion" />
-
-    <Button
         android:id="@+id/supervision"
         android:layout_width="378dp"
         android:layout_height="41dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/supervisi_n_adulto_mayor"
-        app:layout_constraintTop_toBottomOf="@+id/monitoreo_temperatura" />
-
-    <Button
-        android:id="@+id/iluminacion"
-        android:layout_width="378dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="3dp"
+        android:layout_marginBottom="116dp"
         android:layout_marginTop="9dp"
-        android:text="@string/control_de_iluminaci_n"
-        app:layout_constraintBottom_toTopOf="@+id/monitoreo_temperatura"
+        android:text="@string/supervisi_n_adulto_mayor"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gestionarAdultos" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="371dp"
-        android:layout_height="448dp"
-        android:layout_marginBottom="100dp"
+    <RelativeLayout
+        android:layout_width="344dp"
+        android:layout_height="244dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/supervision"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/gestionarUsuarios"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/logo" android:contentDescription="@string/logotipo" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            app:srcCompat="@drawable/logo"
+            tools:ignore="ContentDescription"/>
+
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
