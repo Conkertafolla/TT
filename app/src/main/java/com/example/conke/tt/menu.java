@@ -9,7 +9,7 @@ import android.widget.Button;
 public class menu extends AppCompatActivity {
 Button gestionarAdultos;
 Button getGestionarEncargado;
-Button control;
+Button getSupervisar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,7 +17,9 @@ Button control;
         setContentView(R.layout.activity_menu);
         gestionarAdultos = findViewById(R.id.gestionarAdultos);
         getGestionarEncargado = findViewById(R.id.gestionarUsuarios);
-        control=findViewById(R.id.iluminacion);
+        getSupervisar = findViewById(R.id.supervision);
+
+
         gestionarAdultos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -32,13 +34,15 @@ Button control;
                 startActivity(i);
             }
         });
-        control.setOnClickListener(new View.OnClickListener() {
+
+        getSupervisar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(menu.this,control_Iluminacion.class);
+                Intent i= new Intent(menu.this ,SupervicionAdulto.class);
                 startActivity(i);
             }
         });
+
 
     }
 

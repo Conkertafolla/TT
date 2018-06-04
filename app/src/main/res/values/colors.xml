@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorBoton">#0fd426</color>
     <color name="colorTexto">#ffffff</color>
+    <color name="botonBlanco">#ffffff</color>
 </resources>

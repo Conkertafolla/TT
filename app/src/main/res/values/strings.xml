@@ -49,6 +49,9 @@
     <string name="dormitorio_2">Dormitorio 2          </string>
     <string name="sala">Sala        </string>
     <string name="ba_o">Baño        </string>
+    <string name="visualizar_ritmo">visualizar ritmo cardiaco</string>
+    <string name="visualizar_temperatura">visualizar temperatura</string>
+    <string name="localizacion">localización</string>
 
 
 </resources>

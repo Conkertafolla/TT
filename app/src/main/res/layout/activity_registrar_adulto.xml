@@ -7,74 +7,18 @@
     tools:context="com.example.conke.tt.registrarAdulto">
 
 
-    <LinearLayout
-        android:id="@+id/Registro_AM"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@id/nombre"
-                android:layout_width="375dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/nombre"
-                android:imeOptions="actionNext"
-                android:inputType="textPersonName"
-                android:labelFor="@+id/nombre" />
-
-        </android.support.design.widget.TextInputLayout>
-
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/apellidoPaterno"
-                android:layout_width="394dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/apellido_paterno"
-                android:imeOptions="actionNext"
-                android:inputType="textPersonName"
-                android:labelFor="@+id/apellidoPaterno" />
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/apellidoMaterno"
-                android:layout_width="373dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/apellido_materno"
-                android:imeOptions="actionNext"
-                android:inputType="textPersonName"
-                android:labelFor="@+id/apellidoMaterno" />
-        </android.support.design.widget.TextInputLayout>
-
-
-    </LinearLayout>
-
     <RadioGroup
         android:id="@+id/sexo_AM"
         android:layout_width="350dp"
         android:layout_height="56dp"
+        android:layout_marginBottom="9dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="2dp"
+        android:layout_marginTop="9dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
 
@@ -104,18 +48,79 @@
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="361dp"
-        android:layout_height="66dp"
+        android:layout_height="278dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Registro_AM">
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/LayoutNombreAM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
+
+            <EditText
+                android:id="@+id/nombreAM"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignStart="@+id/selFec"
+                android:layout_marginTop="13dp"
+                android:hint="@string/nombre_adulto_mayor"
+                android:inputType="text"
+                android:text="@string/nombre_adulto_mayor" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/LayoutApellidoPaternoAM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/LayoutNombreAM">
+
+            <EditText
+                android:id="@+id/apellidoPaternoAM"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignStart="@+id/selFec"
+                android:layout_marginTop="13dp"
+                android:hint="@string/apellido_paterno"
+                android:inputType="text"
+                android:text="@string/apellido_paterno" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/LayoutapellidoMaternoAM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true">
+
+            <EditText
+                android:id="@+id/apellidoMaternoAM"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignStart="@+id/selFec"
+                android:layout_marginTop="13dp"
+                android:hint="@string/apellido_materno"
+                android:inputType="text"
+                android:text="@string/apellido_materno" />
+
+        </android.support.design.widget.TextInputLayout>
+
 
         <EditText
             android:id="@+id/fecha_AM"
             android:layout_width="196dp"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/selFec"
-            android:layout_marginStart="45dp"
-            android:layout_toEndOf="@+id/selFec"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="19dp"
             android:clickable="false"
             android:ems="10"
             android:focusable="true"
@@ -123,16 +128,25 @@
             android:inputType="date"
             android:labelFor="@id/fecha_AM"
             android:maxLines="1"
-            android:text="@string/fecha_de_nacimiento" />
+            android:text="@string/fecha_de_nacimiento"
+            tools:layout_editor_absoluteX="34dp"
+            tools:layout_editor_absoluteY="232dp" />
 
         <ImageButton
             android:id="@+id/selFec"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp"
             android:imeOptions="actionNext"
             app:layout_constraintRight_toRightOf="parent"
             app:srcCompat="@drawable/baseline_calendar_today_black_18dp2"
             tools:ignore="ContentDescription" />
+
+
+
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -141,11 +155,12 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="9dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sexo_AM">
+
 
         <TextView
             android:id="@+id/textView"
@@ -168,79 +183,19 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout3"
-        android:layout_width="344dp"
-        android:layout_height="109dp"
-        android:layout_marginBottom="1dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/Registrar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enfermedades_AMl">
-
-        <ImageButton
-            android:id="@+id/add_enfermedad"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:adjustViewBounds="false"
-            app:srcCompat="@drawable/lista"
-            tools:ignore="ContentDescription"
-            tools:layout_editor_absoluteX="344dp"
-            tools:layout_editor_absoluteY="38dp" />
-
-        <ListView
-            android:id="@+id/item_enfermedades"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@+id/add_enfermedad"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="8dp" />
-
-        <EditText
-            android:id="@+id/enfermedadText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/item_enfermedades"
-            android:layout_marginStart="8dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:labelFor="@+id/enfermedadText"
-            android:text="@string/enfermedadText" />
-
-    </RelativeLayout>
-
-    <TextView
-        android:id="@+id/enfermedades_AMl"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:layout_marginEnd="261dp"
-        android:layout_marginStart="8dp"
-        android:text="@string/enfermedades"
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2" />
-
     <Button
         android:id="@+id/Registrar"
         android:layout_width="162dp"
         android:layout_height="43dp"
         android:layout_marginEnd="99dp"
         android:layout_marginStart="99dp"
-        android:layout_marginTop="2dp"
         android:background="@color/colorBoton"
         android:text="@string/registrar"
         android:textColor="@color/colorTexto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout3" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>
