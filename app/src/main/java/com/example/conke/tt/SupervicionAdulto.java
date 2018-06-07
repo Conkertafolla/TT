@@ -10,5 +10,8 @@ public class SupervicionAdulto extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_supervicion_adulto);
         setTitle("Supervición del adulto mayor");
+
+
+
     }
 }
