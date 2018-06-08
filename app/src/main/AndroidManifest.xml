@@ -25,7 +25,8 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".registro_adulto_encargado" />
         <activity android:name=".control_Iluminacion" />
-        <activity android:name=".SupervicionAdulto"></activity>
+        <activity android:name=".SupervicionAdulto" />
+        <activity android:name=".RitmocActivity"></activity>
     </application>
 
 </manifest>

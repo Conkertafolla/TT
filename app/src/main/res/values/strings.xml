@@ -52,6 +52,6 @@
     <string name="visualizar_ritmo">visualizar ritmo cardiaco</string>
     <string name="visualizar_temperatura">visualizar temperatura</string>
     <string name="localizacion">localización</string>
-
-
+    <string name="title_notificaciones">notificaciones</string>
+    <string name="title_menu">menu</string>
 </resources>

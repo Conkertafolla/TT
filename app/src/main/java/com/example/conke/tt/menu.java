@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.view.Menu;
 
 public class menu extends AppCompatActivity {
 Button gestionarAdultos;
@@ -45,5 +46,9 @@ Button getSupervisar;
 
 
     }
-
+    
+    public boolean onCreateOptionsMenu(Menu men) {
+        getMenuInflater().inflate(R.menu.navigation, men);
+        return true;
+    }
 }
