@@ -14,7 +14,7 @@ Button getSupervisar;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Menu principal");
-        setContentView(R.layout.activity_menu);
+        setContentView( R.layout.activity_menu);
         gestionarAdultos = findViewById(R.id.gestionarAdultos);
         getGestionarEncargado = findViewById(R.id.gestionarUsuarios);
         getSupervisar = findViewById(R.id.supervision);
