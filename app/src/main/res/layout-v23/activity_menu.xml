@@ -43,10 +43,10 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/tool_menu"
         android:layout_width="395dp"
-        android:layout_height="46dp"
+        android:layout_height="47dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:background="@color/colorPrimary"
+        android:background="?attr/colorPrimary"
         android:contextClickable="false"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"

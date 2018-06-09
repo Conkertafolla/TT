@@ -1,10 +1,13 @@
 package com.example.conke.tt;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 
 public class menu extends AppCompatActivity {
 Button gestionarAdultos;
@@ -13,11 +16,14 @@ Button getSupervisar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle("Menu principal");
+
         setContentView( R.layout.activity_menu);
         gestionarAdultos = findViewById(R.id.gestionarAdultos);
         getGestionarEncargado = findViewById(R.id.gestionarUsuarios);
         getSupervisar = findViewById(R.id.supervision);
+        Toolbar barra =findViewById(R.id.tool_menu);
+        setSupportActionBar(barra);
+        barra.setTitle("Menu principal");
 
 
         gestionarAdultos.setOnClickListener(new View.OnClickListener() {
@@ -44,6 +50,16 @@ Button getSupervisar;
         });
 
 
+
+
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.notificaciones, menu);
+        return true;
+
+    }
+
 
 }
