@@ -6,12 +6,40 @@
     android:layout_height="match_parent"
     tools:context="com.example.conke.tt.registro_adulto_encargado">
 
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_registrar_encargado"
+        android:layout_width="395dp"
+        android:layout_height="46dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:textColor="@color/colorTexto"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <TextView
+            android:id="@+id/title_registrar_encargado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/registrar_encargado"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="60dp"
+            tools:layout_editor_absoluteY="11dp" />
+
+    </android.support.v7.widget.Toolbar>
+
     <android.support.design.widget.TextInputLayout
         android:id="@+id/textInputLayout"
         android:layout_width="371dp"
         android:layout_height="61dp"
-        android:layout_marginTop="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
+        android:layout_marginTop="44dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -163,21 +191,123 @@
             android:labelFor="@id/passwordAE" />
     </android.support.design.widget.TextInputLayout>
 
-    <Button
-        android:id="@+id/RegistrarAE"
-        android:layout_width="162dp"
-        android:layout_height="43dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="99dp"
-        android:layout_marginStart="99dp"
-        android:layout_marginTop="45dp"
-        android:background="@color/colorBoton"
-        android:text="@string/registrar"
-        android:textColor="@color/colorTexto"
+    <RadioGroup
+        android:id="@+id/sexo_AE"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout7">
+
+        <TextView
+            android:layout_width="52dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/sexo"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        <RadioButton
+            android:id="@+id/sexMAE"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="getSexoAE"
+            android:text="@string/masculino" />
+
+
+
+        <RadioButton
+            android:id="@+id/sexFAE"
+            android:layout_width="138dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="getSexoAE"
+            android:text="@string/femenino" />
+
+    </RadioGroup>
+
+
+    <LinearLayout
+        android:id="@+id/eliminarAE_form"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginStart="16dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sexo_AE">
+
+
+        <Button
+            android:id="@+id/eliminarAE"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="150dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/colorBoton"
+            android:gravity="center"
+            android:text="@string/eliminar"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textColor="@color/colorTexto"
+            android:visibility="visible"
+            tools:layout_editor_absoluteX="191dp"
+            tools:layout_editor_absoluteY="508dp"
+            tools:text="Eliminar" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="28dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/eliminarAE_form"
+        app:layout_constraintTop_toBottomOf="@+id/sexo_AE">
+
+
+        <Button
+            android:id="@+id/RegistrarAE"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="150dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/colorBoton"
+            android:gravity="center"
+            android:text="@string/registrar"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textColor="@color/colorTexto"
+            tools:layout_editor_absoluteY="508dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/id_AE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
+        android:layout_marginEnd="360dp"
+        android:layout_marginStart="272dp"
+        android:layout_marginTop="532dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout7" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>

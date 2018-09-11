@@ -1,7 +1,6 @@
 package com.example.conke.tt;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +15,6 @@ Button getSupervisar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView( R.layout.activity_menu);
         gestionarAdultos = findViewById(R.id.gestionarAdultos);
         getGestionarEncargado = findViewById(R.id.gestionarUsuarios);
@@ -24,19 +22,21 @@ Button getSupervisar;
         Toolbar barra =findViewById(R.id.tool_menu);
         setSupportActionBar(barra);
         barra.setTitle("Menu principal");
+        barra.setTitleTextColor(16777215);
+
 
 
         gestionarAdultos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(menu.this, registrarAdulto.class);
+                Intent i = new Intent(menu.this, mostrarAM.class);
                 startActivity(i);
             }
         });
         getGestionarEncargado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(menu.this,registro_adulto_encargado.class);
+                Intent i = new Intent(menu.this,mostrarAE.class);
                 startActivity(i);
             }
         });
@@ -44,13 +44,12 @@ Button getSupervisar;
         getSupervisar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i= new Intent(menu.this ,SupervicionAdulto.class);
+                Intent i= new Intent(menu.this ,mostrarAM.class);
+                i.putExtra("form",1);
                 startActivity(i);
+
             }
         });
-
-
-
 
     }
 

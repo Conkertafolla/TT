@@ -7,7 +7,8 @@
         android:id="@+id/notificaciones_item"
         android:icon="@drawable/campana2"
         android:title="@string/notificaciones"
-        app:showAsAction="always" />
+        app:showAsAction="always"
+        />
 
 
 </menu>

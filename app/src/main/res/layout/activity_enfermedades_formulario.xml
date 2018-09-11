@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.conke.tt.Enfermedades_formulario">
+
+    <RelativeLayout
+        android:id="@+id/relative_enfermedades"
+        android:layout_width="wrap_content"
+        android:layout_height="551dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_enfermedad_nombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="91dp">
+
+            <android.support.design.widget.TextInputEditText
+
+                android:id="@+id/editEnfermedadNombre"
+                android:layout_width="334dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/input_nombre_enfermedad"
+                android:inputType="text"
+                android:labelFor="@+id/editEnfermedadNombre" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/agregar_enfermedad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/input_enfermedad_nombre"
+            android:layout_centerHorizontal="true"
+            android:background="@color/colorBoton"
+            android:text="@string/agregar_enfermedad"
+            android:onClick="agregar"
+            android:textColor="@color/colorTexto" />
+
+        <ListView
+            android:id="@+id/listViewEnfermedad"
+            android:layout_width="500dp"
+            android:layout_height="360dp"
+
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/agregar_enfermedad"
+            android:layout_marginTop="11dp" />
+
+        <Button
+            android:id="@+id/btn_guardar_enfermedad"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="13dp"
+            android:layout_marginStart="9dp"
+            android:text="@string/save_enfermedad"
+            android:background="@color/colorBoton"
+            android:textColor="@color/colorTexto" />
+
+        <Button
+            android:id="@+id/btn_cancelar_enfermedad"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btn_guardar_enfermedad"
+            android:layout_alignBottom="@+id/btn_guardar_enfermedad"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="9dp"
+            android:background="@color/colorBoton"
+            android:text="@string/cancel_enfermedad"
+            android:textColor="@color/colorTexto" />
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

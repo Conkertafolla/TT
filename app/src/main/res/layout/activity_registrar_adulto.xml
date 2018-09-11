@@ -7,6 +7,22 @@
     tools:context="com.example.conke.tt.registrarAdulto">
 
 
+    <Button
+        android:id="@+id/enfermedades_btn"
+        android:layout_width="226dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="23dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/colorBoton"
+        android:text="@string/Registrar_enfermedades_btn"
+        android:textColor="@color/colorTexto"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2" />
+
     <RadioGroup
         android:id="@+id/sexo_AM"
         android:layout_width="350dp"
@@ -70,7 +86,7 @@
                 android:layout_marginTop="13dp"
                 android:hint="@string/nombre_adulto_mayor"
                 android:inputType="text"
-                android:text="@string/nombre_adulto_mayor" />
+                android:text="" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -88,8 +104,7 @@
                 android:layout_alignStart="@+id/selFec"
                 android:layout_marginTop="13dp"
                 android:hint="@string/apellido_paterno"
-                android:inputType="text"
-                android:text="@string/apellido_paterno" />
+                android:inputType="text" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -108,8 +123,7 @@
                 android:layout_alignStart="@+id/selFec"
                 android:layout_marginTop="13dp"
                 android:hint="@string/apellido_materno"
-                android:inputType="text"
-                android:text="@string/apellido_materno" />
+                android:inputType="text" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -183,19 +197,81 @@
 
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/Registrar"
-        android:layout_width="162dp"
-        android:layout_height="43dp"
-        android:layout_marginEnd="99dp"
-        android:layout_marginStart="99dp"
-        android:background="@color/colorBoton"
-        android:text="@string/registrar"
-        android:textColor="@color/colorTexto"
+
+    <LinearLayout
+        android:id="@+id/eliminarAM_form"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="23dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enfermedades_btn">
+
+
+        <Button
+            android:id="@+id/eliminarAE"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="100dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/colorBoton"
+            android:gravity="center"
+            android:text="@string/eliminar"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textColor="@color/colorTexto"
+            android:visibility="visible"
+            tools:layout_editor_absoluteX="191dp"
+            tools:layout_editor_absoluteY="508dp"
+            tools:text="ELIMINAR" />
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/linearLayout3"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="23dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/eliminarAM_form"
+        app:layout_constraintTop_toBottomOf="@+id/enfermedades_btn">
+
+
+        <Button
+            android:id="@+id/Registrar"
+            android:layout_width="100dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="99dp"
+            android:layout_marginStart="99dp"
+            android:layout_weight="1"
+            android:background="@color/colorBoton"
+            android:text="@string/registrar"
+            android:textColor="@color/colorTexto"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </LinearLayout>
+
+
+
 
 
 </android.support.constraint.ConstraintLayout>

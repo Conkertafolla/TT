@@ -38,7 +38,6 @@
     <string name="enfermedad">Enfermedad</string>
     <string name="enfermedad_AM">Enfermedad</string>
     <string name="enfermedadText">enfermedad</string>
-    <string name="nombreAE">Nombre</string>
     <string name="fecha_AE">Fecha de nacimiento</string>
     <string name="correo_electronico">Correo electronico</string>
     <string name="n_mero_telefonico">Número telefonico</string>
@@ -49,10 +48,31 @@
     <string name="dormitorio_2">Dormitorio 2          </string>
     <string name="sala">Sala        </string>
     <string name="ba_o">Baño        </string>
-    <string name="visualizar_ritmo">visualizar ritmo cardiaco</string>
-    <string name="visualizar_temperatura">visualizar temperatura</string>
+    <string name="visualizar_ritmo_registro">visualizar registro ritmo cardiaco</string>
+    <string name="visualizar_temperatura_registro">visualizar registro temperatura</string>
     <string name="localizacion">localización</string>
     <string name="notificaciones">notificaciones</string>
+    <string name="temperatura_corporal">Temperatura corporal</string>
+    <string name="ritmo_cardiaco">Ritmo cardiaco</string>
+    <string name="supervisi_n_adulto_mayor_title">Supervisión Adulto Mayor</string>
+    <string name="menu_principal">Menu principal</string>
+    <string name="registrar_adulto_mayor">Registrar adulto mayor</string>
+    <string name="registrar_encargado">Registrar encargado</string>
+    <string name="Registrar_enfermedades_btn">Registrar engermedades</string>
+    <string name="input_nombre_enfermedad">Enfermedad</string>
+    <string name="agregar_enfermedad">Agregar enfermedad</string>
+    <string name="cancel_enfermedad">cancelar</string>
+    <string name="save_enfermedad">Guardar</string>
+    <string name="title_activity_mostrat_adultos_encargados">mostratAdultosEncargados</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_mostrar_am">mostrarAM</string>
+    <string name="nombreAE">Nombre</string>
+    <string name="valor">Valor</string>
+    <string name="fecha">Fecha</string>
+    <string name="hora">Hora</string>
+    <string name="prueba">prueba</string>
+    <string name="ipconfig">http://192.168.1.72:5000/api/v1/</string>
+    <string name="eliminar">Eliminar</string>
 
 
 </resources>

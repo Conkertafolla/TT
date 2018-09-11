@@ -7,14 +7,15 @@
     tools:context="com.example.conke.tt.SupervicionAdulto">
 
     <RelativeLayout
+        android:id="@+id/relativeLayout10"
         android:layout_width="344dp"
-        android:layout_height="495dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="238dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="329dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -25,7 +26,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:background="@color/botonBlanco"
-            android:text="@string/visualizar_ritmo" />
+            android:text="@string/visualizar_ritmo_registro" />
 
         <Button
             android:id="@+id/btn_visualizar_temperatura"
@@ -34,7 +35,7 @@
             android:layout_alignParentStart="true"
             android:layout_below="@+id/btn_visualizar_pulso"
             android:background="@color/botonBlanco"
-            android:text="@string/visualizar_temperatura" />
+            android:text="@string/visualizar_temperatura_registro" />
 
         <Button
             android:id="@+id/btn_localizacion"
@@ -46,5 +47,73 @@
             android:text="@string/localizacion" />
 
     </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout11"
+        android:layout_width="344dp"
+        android:layout_height="257dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_supervicion">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="200dp"
+            android:layout_height="193dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="126dp"
+            app:srcCompat="@drawable/persona"
+            tools:layout_editor_absoluteX="80dp"
+            tools:layout_editor_absoluteY="87dp"
+            tools:ignore="ContentDescription"/>
+
+        <TextView
+            android:id="@+id/temperatura_corporal_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="82dp"
+            android:text="@string/temperatura_corporal" />
+
+        <TextView
+            android:id="@+id/ritmo_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/temperatura_corporal_label"
+            android:layout_marginTop="31dp"
+            android:text="@string/ritmo_cardiaco" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_supervicion"
+        android:layout_width="373dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorPrimary"
+        android:contextClickable="false"
+        android:minHeight="?attr/actionBarSize"
+        android:textColor="@color/colorTexto"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/supervisi_n_adulto_mayor_title"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="19dp" />
+    </android.support.v7.widget.Toolbar>
 
 </android.support.constraint.ConstraintLayout>

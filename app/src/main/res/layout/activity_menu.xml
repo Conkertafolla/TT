@@ -12,6 +12,7 @@
         android:layout_width="378dp"
         android:layout_height="41dp"
         android:layout_marginTop="260dp"
+        android:background="@color/colorTexto"
         android:text="@string/gestionar_usuarios"
         app:layout_constraintBottom_toTopOf="@+id/gestionarAdultos"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,6 +25,7 @@
         android:layout_height="41dp"
         android:layout_marginTop="3dp"
         android:text="@string/gestionar_adulto_mayor"
+        android:background="@color/colorTexto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gestionarUsuarios" />
@@ -32,9 +34,10 @@
         android:id="@+id/supervision"
         android:layout_width="378dp"
         android:layout_height="41dp"
-        android:layout_marginBottom="116dp"
-        android:layout_marginTop="9dp"
+        android:layout_marginBottom="170dp"
+        android:layout_marginTop="11dp"
         android:text="@string/supervisi_n_adulto_mayor"
+        android:background="@color/colorTexto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,10 +52,24 @@
         android:background="@color/colorPrimary"
         android:contextClickable="false"
         android:minHeight="?attr/actionBarSize"
+        android:textColor="@color/colorTexto"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_principal"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="60dp"
+            tools:layout_editor_absoluteY="11dp" />
+
+</android.support.v7.widget.Toolbar>
+
 
     <RelativeLayout
         android:id="@+id/relativeLayout3"
@@ -77,5 +94,7 @@
             tools:ignore="ContentDescription" />
 
     </RelativeLayout>
+
+
 
 </android.support.constraint.ConstraintLayout>
