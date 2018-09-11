@@ -144,7 +144,7 @@ public class registro_adulto_encargado extends AppCompatActivity implements View
         postParam.put("NumTel",numeroAE.getText().toString());
         postParam.put("Sexo", Integer.toString(Sexo));
         JSONObject jsonObject = new JSONObject(postParam);
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest (Request.Method.POST,url,jsonObject,this,this);
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest (Request.Method.PUT,url,jsonObject,this,this);
         VolleySingleton.getInstanciaVolley(this).addToRequestQueue(jsonObjectRequest);
 
     }
