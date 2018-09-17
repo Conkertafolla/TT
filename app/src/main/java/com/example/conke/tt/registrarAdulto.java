@@ -21,12 +21,17 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+
+import org.json.JSONObject;
+
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 
-public class registrarAdulto extends AppCompatActivity implements View.OnClickListener{
+public class registrarAdulto extends AppCompatActivity implements View.OnClickListener,Response.Listener<JSONObject>,Response.ErrorListener{
     private static final String CERO = "0";
     private static final String BARRA = "/";
     private static final int PICK_IMAGE = 100;
@@ -71,6 +76,7 @@ public class registrarAdulto extends AppCompatActivity implements View.OnClickLi
         apellidoPaternoAM= findViewById(R.id.apellidoPaternoAM);
         apellidoMaternoAM = findViewById(R.id.apellidoMaternoAM);
         eliminar_formAM = (LinearLayout) findViewById(R.id.eliminarAM_form);
+        masculino.setChecked(true);
 
         enfermedadesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +92,6 @@ public class registrarAdulto extends AppCompatActivity implements View.OnClickLi
             adultoMayor adulto = getIntent().getParcelableExtra("adultoMayor");
             eliminar_formAM.setVisibility(View.VISIBLE);
             fillForm(adulto);
-
 
         }
 
@@ -128,7 +133,7 @@ public class registrarAdulto extends AppCompatActivity implements View.OnClickLi
 
             }
             if(resultCode == RESULT_CANCELED){
-                Log.i("El usuario cancelo", String.valueOf(enfermedades.size()));
+
 
             }
 
@@ -155,4 +160,28 @@ public class registrarAdulto extends AppCompatActivity implements View.OnClickLi
 
     }
 
+    private boolean checkValidation() {
+        boolean ret = true;
+        if (!Validation.isOnlyText(nombreAM,true))
+            ret = false;
+        if (!Validation.isOnlyText(apellidoPaternoAM,true))
+            ret = false;
+        if (!Validation.isOnlyText(apellidoMaternoAM,true))
+            ret = false;
+        return ret;
+
+
+
+    }
+
+
+    @Override
+    public void onErrorResponse(VolleyError error) {
+
+    }
+
+    @Override
+    public void onResponse(JSONObject response) {
+
+    }
 }
