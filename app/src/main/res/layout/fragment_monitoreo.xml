@@ -1,0 +1,93 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.conke.tt.MonitoreoFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:id="@+id/relativeLayout10"
+        android:layout_width="344dp"
+        android:layout_height="238dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="329dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btn_visualizar_pulso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/botonBlanco"
+            android:text="@string/visualizar_ritmo_registro" />
+
+        <Button
+            android:id="@+id/btn_visualizar_temperatura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/btn_visualizar_pulso"
+            android:background="@color/botonBlanco"
+            android:text="@string/visualizar_temperatura_registro" />
+
+        <Button
+            android:id="@+id/btn_localizacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/btn_visualizar_temperatura"
+            android:background="@color/botonBlanco"
+            android:text="@string/localizacion" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout11"
+        android:layout_width="344dp"
+        android:layout_height="257dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_supervicion">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="200dp"
+            android:layout_height="193dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/persona"
+            tools:ignore="ContentDescription"
+            tools:layout_editor_absoluteX="80dp"
+            tools:layout_editor_absoluteY="87dp" />
+
+        <TextView
+            android:id="@+id/temperatura_corporal_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ritmo_label"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="29dp"
+            android:text="@string/temperatura_corporal" />
+
+        <TextView
+            android:id="@+id/ritmo_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:text="@string/ritmo_cardiaco" />
+    </RelativeLayout>
+
+</FrameLayout>

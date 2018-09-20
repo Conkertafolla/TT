@@ -64,7 +64,7 @@
     <string name="cancel_enfermedad">cancelar</string>
     <string name="save_enfermedad">Guardar</string>
     <string name="title_activity_mostrat_adultos_encargados">mostratAdultosEncargados</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">TT</string>
     <string name="title_activity_mostrar_am">mostrarAM</string>
     <string name="nombreAE">Nombre</string>
     <string name="valor">Valor</string>
@@ -73,6 +73,15 @@
     <string name="prueba">prueba</string>
     <string name="ipconfig">http://192.168.1.72:5000/api/v1/</string>
     <string name="eliminar">Eliminar</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Ajustes</string>
+    <string name="action_logout">Cerrar sesión</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
