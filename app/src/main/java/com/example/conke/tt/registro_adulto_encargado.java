@@ -91,6 +91,7 @@ public class registro_adulto_encargado extends AppCompatActivity implements View
         eliminar_form =findViewById(R.id.eliminarAE_form);
 
 
+
         flag =getIntent().getIntExtra("update",0);
 
         if (flag==1){
