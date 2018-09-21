@@ -99,7 +99,7 @@ public class MonitoreoFragment extends Fragment {
             }
         });
 
-        return inflater.inflate(R.layout.fragment_monitoreo, container, false);
+        return view;
 
     }
 
