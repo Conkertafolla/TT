@@ -58,7 +58,7 @@
     <string name="menu_principal">Menu principal</string>
     <string name="registrar_adulto_mayor">Registrar adulto mayor</string>
     <string name="registrar_encargado">Registrar encargado</string>
-    <string name="Registrar_enfermedades_btn">Registrar engermedades</string>
+    <string name="Registrar_enfermedades_btn">Registrar enfermedades</string>
     <string name="input_nombre_enfermedad">Enfermedad</string>
     <string name="agregar_enfermedad">Agregar enfermedad</string>
     <string name="cancel_enfermedad">cancelar</string>
