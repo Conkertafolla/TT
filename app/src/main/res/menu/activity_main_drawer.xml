@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_inicio"
+            android:icon="@drawable/baseline_home_white_18dp2"
+            android:title="Inicio" />
+        <item
+            android:id="@+id/nav_notification"
+            android:icon="@drawable/baseline_notifications_white_18dp"
+            android:title="Notificaciones" />
+        <item
+            android:id="@+id/nav_select"
+            android:icon="@drawable/baseline_supervisor_account_white_18dp"
+            android:title="Seleccionar Adulto Mayor" />
+        <item
+            android:id="@+id/nav_gestionar"
+            android:icon="@drawable/baseline_list_white_18dp"
+            android:title="Gestionar Adultos Mayores" />
+        <item
+            android:id="@+id/nav_enc"
+            android:icon="@drawable/baseline_assignment_ind_white_18dp"
+            android:title="Ver Adultos Encargados" />
+    </group>
+
+    <item android:title="Mi cuenta">
+        <menu>
+            <item
+                android:id="@+id/nav_setting"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Ajustes" />
+        </menu>
+    </item>
+
+</menu>
