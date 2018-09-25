@@ -55,7 +55,6 @@ public class SupervicionAdulto extends AppCompatActivity  {
         i.putExtra("operation",1);
         i.putExtra("idAM",idAM);
         startActivity(i);
-
     }
 
     private void getPulsos() {

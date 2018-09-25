@@ -82,7 +82,6 @@ public class MonitoreoFragment extends Fragment {
         idAM = getActivity().getIntent().getStringExtra("idAM");
         btn_visualizar_pulso= (Button) view.findViewById(R.id.btn_visualizar_pulso);
         btn_visualizar_temperatura= (Button) view.findViewById(R.id.btn_visualizar_temperatura);
-
         btn_visualizar_pulso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,11 +89,9 @@ public class MonitoreoFragment extends Fragment {
 
             }
         });
-
         btn_visualizar_temperatura.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                getTemperatures();
+            public void onClick(View view) {getTemperatures();
 
             }
         });

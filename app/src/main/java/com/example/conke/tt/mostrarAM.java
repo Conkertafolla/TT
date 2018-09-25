@@ -38,7 +38,7 @@ public class mostrarAM extends AppCompatActivity implements Response.Listener<JS
     FloatingActionButton fab;
     String idAM=" ";
     int flag=0;
-    int form=0;
+    int form =0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         form =getIntent().getIntExtra("form",0);

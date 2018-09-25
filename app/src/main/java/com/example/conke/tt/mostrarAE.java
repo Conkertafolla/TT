@@ -38,12 +38,12 @@ public class mostrarAE extends AppCompatActivity implements Response.Listener<JS
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mostrar_ae);
 
+        recyclerAE = (RecyclerView) findViewById(R.id.recycler_ae);
+        setContentView(R.layout.activity_mostrar_ae);
         setTitle(null);
         Toolbar topToolBar = (Toolbar)findViewById(R.id.tool_adultos_encargados);
         topToolBar.setTitle("Adultos Encargados");
-        recyclerAE = (RecyclerView) findViewById(R.id.recycler_ae);
         layoutManagerAE = new LinearLayoutManager(this);
         recyclerAE.setLayoutManager(layoutManagerAE);
         adaptador = new adaptadorAE(listaAE);

@@ -17,7 +17,7 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, MonitoreoFragment.OnFragmentInteractionListener,
-        PersonasFragment.OnFragmentInteractionListener{
+        PersonasFragment.OnFragmentInteractionListener,AEFragment.OnFragmentInteractionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +59,8 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
+        // automatically handle clic
+        // ks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
@@ -88,12 +89,20 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_notification) {
 
         } else if (id == R.id.nav_select) {
+            Bundle form = new Bundle();
+            form.putInt("form",1);
+            miFrament = new PersonasFragment();
+            miFrament.setArguments(form);
+            fragmentseleccionado = true;
 
         } else if (id == R.id.nav_gestionar) {
+            Bundle pass = new Bundle();
+            pass.putInt("form",0);
             miFrament = new PersonasFragment();
+            miFrament.setArguments(pass);
             fragmentseleccionado = true;
         } else if (id == R.id.nav_enc) {
-            miFrament = new PersonasFragment();
+            miFrament = new AEFragment();
             fragmentseleccionado = true;
         } else if (id == R.id.nav_setting) {
             /*miFrament =  new FormAdulMayFragment();

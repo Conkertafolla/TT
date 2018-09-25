@@ -1,17 +1,15 @@
 package com.example.conke.tt;
 
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,22 +31,21 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link PersonasFragment.OnFragmentInteractionListener} interface
+ * {@link AEFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link PersonasFragment#newInstance} factory method to
+ * Use the {@link AEFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class PersonasFragment extends Fragment implements Response.Listener<JSONObject>,Response.ErrorListener  {
-    RecyclerView recyclerAM;
-    ArrayList<adultoMayor> listaAM = new ArrayList<adultoMayor>();
-    adaptadorAM adaptador;
-    LinearLayoutManager layoutManagerAM;
+public class AEFragment extends Fragment implements Response.Listener<JSONObject>,Response.ErrorListener {
+
+    RecyclerView recyclerAE;
+    ArrayList<adultoEncargado> listaAE = new ArrayList<adultoEncargado>();
+    adaptadorAE adaptador;
+    LinearLayoutManager layoutManagerAE;
     JsonObjectRequest jsonObjectRequest;
     ProgressDialog progressDialog;
-    FloatingActionButton fab;
-    String idAM=" ";
-    int flag=0;
-    int form =0;
+    String idAe= "";
+    int flag =0;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -60,7 +57,7 @@ public class PersonasFragment extends Fragment implements Response.Listener<JSON
 
     private OnFragmentInteractionListener mListener;
 
-    public PersonasFragment() {
+    public AEFragment() {
         // Required empty public constructor
     }
 
@@ -70,11 +67,11 @@ public class PersonasFragment extends Fragment implements Response.Listener<JSON
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment PersonasFragment.
+     * @return A new instance of fragment AEFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static PersonasFragment newInstance(String param1, String param2) {
-        PersonasFragment fragment = new PersonasFragment();
+    public static AEFragment newInstance(String param1, String param2) {
+        AEFragment fragment = new AEFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -94,97 +91,87 @@ public class PersonasFragment extends Fragment implements Response.Listener<JSON
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_personas, container, false);
-        form = this.getArguments().getInt("form",0);
-        recyclerAM = (RecyclerView) view.findViewById(R.id.f_recycler_AM);
-        layoutManagerAM = new LinearLayoutManager(getContext());
-        recyclerAM.setLayoutManager(layoutManagerAM);
-        adaptador = new adaptadorAM(listaAM);
-        recyclerAM.setAdapter(adaptador);
-        fab = (FloatingActionButton) view.findViewById(R.id.f_fab_add_am);
+        View view = inflater.inflate(R.layout.fragment_ae, container, false);
+        recyclerAE = (RecyclerView) view.findViewById(R.id.f_recycler_ae);
+        layoutManagerAE = new LinearLayoutManager(this.getContext());
+        recyclerAE.setLayoutManager(layoutManagerAE);
+        adaptador = new adaptadorAE(listaAE);
+        adaptador.setOnclickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                idAe = listaAE.get(recyclerAE.getChildAdapterPosition(view)).getIdPersona().trim();
+                consultaAE();
+            }
+        });
+
+        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.f_fab_add_ae);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(),registrarAdulto.class);
+                Intent i = new Intent(getActivity(),registro_adulto_encargado.class);
                 getActivity().startActivity(i);
 
             }
         });
 
-        adaptador.setOnclickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                idAM = listaAM.get(recyclerAM.getChildAdapterPosition(view)).getIdPersona().trim();
-                consultaAM();
-            }
-        });
 
-        if(form ==1) {
-            fab.setVisibility(View.GONE);
-        }
+        recyclerAE.setAdapter(adaptador);
 
         consultaWs();
         // Inflate the layout for this fragment
         return view;
+    }
+    private void consultaAE() {
+        progressDialog = new ProgressDialog(getContext());
+        flag=1;
+        progressDialog.setMessage("Cargando...");
+        progressDialog.show();
+        idAe.trim();
+        String url =getResources().getString(R.string.ipconfig)+"AE/"+idAe;
+        jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,url,null,this,this);
+        VolleySingleton.getInstanciaVolley(getContext()).addToRequestQueue(jsonObjectRequest);
+
 
     }
-
 
     private void consultaWs() {
         progressDialog = new ProgressDialog(getContext());
         progressDialog.setMessage("Cargando...");
         progressDialog.show();
-        String url =getResources().getString(R.string.ipconfig)+"AM";
-        jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,url,null,this,this);
-        VolleySingleton.getInstanciaVolley(getContext()).addToRequestQueue(jsonObjectRequest);
-    }
-
-
-    private void consultaAM() {
-        progressDialog = new ProgressDialog(getContext());
-        flag=1;
-        progressDialog.setMessage("Cargando...");
-        progressDialog.show();
-        idAM.trim();
-        String url =getResources().getString(R.string.ipconfig)+"AM/"+idAM;
+        String url =getResources().getString(R.string.ipconfig)+"AE";
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,url,null,this,this);
         VolleySingleton.getInstanciaVolley(getContext()).addToRequestQueue(jsonObjectRequest);
 
-
     }
-
     @Override
     public void onErrorResponse(VolleyError error) {
-        Toast.makeText(getContext(),"No se pudo conectar con el servidor",Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(),"No se pudo conectar con el servidor"+error.toString(),Toast.LENGTH_LONG).show();
         System.out.println();
         Log.d("ERROR",error.toString());
         progressDialog.hide();
-
     }
 
     @Override
     public void onResponse(JSONObject response) {
-        adultoMayor adultoM = new adultoMayor();
+        adultoEncargado adulto = new adultoEncargado();
         JSONObject jsonObject = null;
-
         if (flag ==1){
 
             try {
-                JSONArray json = response.optJSONArray("Datos_AM");
+                JSONArray json = response.optJSONArray("Datos_AE");
                 jsonObject=json.getJSONObject(0);
-                adultoM.setIdPersona("IdPersona");
-                adultoM.setApMaterno(jsonObject.optString("ApMat"));
-                adultoM.setApPaterno(jsonObject.optString("ApPat"));
-                adultoM.setFechaNacimiento(jsonObject.optString("FechaNac"));
-                adultoM.setNombre(jsonObject.optString("Nombre"));
-                adultoM.setSexo(jsonObject.optInt("Sexo"));
+                adulto.setIdPersona(jsonObject.optString("idPersona"));
+                adulto.setApMaterno(jsonObject.optString("ApMat"));
+                adulto.setApPaterno(jsonObject.optString("ApPat"));
+                adulto.setContrasenia(jsonObject.optString("Contrasenia"));
+                adulto.setCorreo(jsonObject.optString("Correo"));
+                adulto.setFechaNacimiento(jsonObject.optString("FechaNac"));
+                adulto.setNombre(jsonObject.optString("Nombre"));
+                adulto.setTelefono(jsonObject.optString("NumTel"));
+                adulto.setSexo(jsonObject.optInt("Sexo"));
                 progressDialog.hide();
-                flag=0;
-                if(form==1){
-                    goTosupervicion();
-                }else{
-                    update_AM(adultoM);
-                }
+                adaptador.notifyDataSetChanged();
+                update_AE(adulto);
 
 
             } catch (JSONException e) {
@@ -196,17 +183,18 @@ public class PersonasFragment extends Fragment implements Response.Listener<JSON
             }
 
 
-        }
-        else{
+        }else{
             try {
-                JSONArray json = response.optJSONArray("AdultosMayores");
+                JSONArray json = response.optJSONArray("AdultoEncargados");
                 int tamanio = json.length();
 
                 for (int i=0; i<json.length(); i++){
+                    adulto = new adultoEncargado();
                     jsonObject=json.getJSONObject(i);
-                    adultoM.setNombre(jsonObject.optString("Nombre"));
-                    adultoM.setIdPersona(jsonObject.optString("idAdMayor"));
-                    listaAM.add(adultoM);
+                    adulto.setCorreo(jsonObject.optString("Correo"));
+                    adulto.setNombre(jsonObject.optString("Nombre"));
+                    adulto.setIdPersona(jsonObject.optString("idPersona"));
+                    listaAE.add(adulto);
                 }
                 progressDialog.hide();
                 adaptador.notifyDataSetChanged();
@@ -223,41 +211,12 @@ public class PersonasFragment extends Fragment implements Response.Listener<JSON
         }
     }
 
-    private void goTosupervicion() {
-        Intent intent = new Intent(getActivity(),SupervicionAdulto.class);
-        intent.putExtra("idAM",idAM);
-        getActivity().startActivity(intent);
-    }
-
-    private void update_AM(adultoMayor uAM) {
-        Intent intent = new Intent(getActivity(),registrarAdulto.class);
-        intent.putExtra("adultoMayor",uAM);
+    private void update_AE(adultoEncargado uAE) {
+        Intent intent = new Intent(getActivity(),registro_adulto_encargado.class);
+        intent.putExtra("adultoEncargado",uAE);
         intent.putExtra("update",1);
         getActivity().startActivity(intent);
     }
-
-    public void DeleteAlert(View v){
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setMessage("Seguro que desea eliminar a este usuario")
-                .setTitle("Eliminar Usuario")
-                .setCancelable(false)
-                .setPositiveButton("Aceptar",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                Toast.makeText(getContext(),"Eliminando",Toast.LENGTH_LONG).show();
-                                dialog.cancel();
-                            }
-                        })
-                .setNegativeButton("Cancelar",new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        Toast.makeText(getContext(),"Cancelado",Toast.LENGTH_LONG).show();
-                        dialog.cancel();
-                    }
-                });
-        AlertDialog alert = builder.create();
-        alert.show();
-    }
-
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
@@ -281,7 +240,6 @@ public class PersonasFragment extends Fragment implements Response.Listener<JSON
         super.onDetach();
         mListener = null;
     }
-
 
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
