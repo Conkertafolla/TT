@@ -71,7 +71,7 @@
     <string name="fecha">Fecha</string>
     <string name="hora">Hora</string>
     <string name="prueba">prueba</string>
-    <string name="ipconfig">http://192.168.1.72:5000/api/v1/</string>
+    <string name="ipconfig">http://192.168.1.69:5000/api/v1/</string>
     <string name="eliminar">Eliminar</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

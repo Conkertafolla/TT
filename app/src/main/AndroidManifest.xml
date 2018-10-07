@@ -22,7 +22,6 @@
         <activity android:name=".registrarAdulto" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".registro_adulto_encargado" />
-        <activity android:name=".control_Iluminacion" />
         <activity android:name=".SupervicionAdulto" />
         <activity android:name=".Enfermedades_formulario" />
         <activity android:name=".mostrarAE" />
@@ -37,7 +36,6 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

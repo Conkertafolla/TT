@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -18,6 +19,7 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, MonitoreoFragment.OnFragmentInteractionListener,
         PersonasFragment.OnFragmentInteractionListener,AEFragment.OnFragmentInteractionListener{
+        String idAdmayor=" ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,8 +74,12 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
+
+
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
@@ -87,6 +93,7 @@ public class MainActivity extends AppCompatActivity
             miFrament = new MonitoreoFragment();
             fragmentseleccionado = true;
         } else if (id == R.id.nav_notification) {
+
 
         } else if (id == R.id.nav_select) {
             Bundle form = new Bundle();
@@ -110,7 +117,8 @@ public class MainActivity extends AppCompatActivity
         }
 
         if(fragmentseleccionado==true){
-            getSupportFragmentManager().beginTransaction().replace(R.id.content_main, miFrament).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_main, miFrament).addToBackStack(null).commit();
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -121,5 +129,14 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+    }
+
+
+    public String getidAdmayor(){
+        return this.idAdmayor;
+    }
+
+    public void setidAdmayor(String idAdmayor){
+        this.idAdmayor = idAdmayor;
     }
 }

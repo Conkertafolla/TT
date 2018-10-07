@@ -14,14 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link MonitoreoFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link MonitoreoFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class MonitoreoFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -53,6 +46,7 @@ public class MonitoreoFragment extends Fragment {
     // TODO: Rename and change types and number of parameters
     public static MonitoreoFragment newInstance(String param1, String param2) {
         MonitoreoFragment fragment = new MonitoreoFragment();
+
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -77,9 +71,10 @@ public class MonitoreoFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_monitoreo, container, false);
+        MainActivity myActivity = (MainActivity) getActivity();
+
 
         View view  = inflater.inflate(R.layout.fragment_monitoreo, container, false);
-        idAM = getActivity().getIntent().getStringExtra("idAM");
         btn_visualizar_pulso= (Button) view.findViewById(R.id.btn_visualizar_pulso);
         btn_visualizar_temperatura= (Button) view.findViewById(R.id.btn_visualizar_temperatura);
         btn_visualizar_pulso.setOnClickListener(new View.OnClickListener() {
@@ -124,16 +119,6 @@ public class MonitoreoFragment extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
@@ -153,6 +138,14 @@ public class MonitoreoFragment extends Fragment {
         i.putExtra("idAM",idAM);
         startActivity(i);
 
+    }
+
+
+
+    public void onResume(){
+        super.onResume();
+
+            this.idAM = ((MainActivity)getActivity()).getidAdmayor();
     }
 
 }

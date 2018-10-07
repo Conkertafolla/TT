@@ -47,6 +47,7 @@ public class PersonasFragment extends Fragment implements Response.Listener<JSON
     ProgressDialog progressDialog;
     FloatingActionButton fab;
     String idAM=" ";
+    senderIdAdulto senderIdAdulto;
     int flag=0;
     int form =0;
     // TODO: Rename parameter arguments, choose names that match
@@ -95,6 +96,8 @@ public class PersonasFragment extends Fragment implements Response.Listener<JSON
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_personas, container, false);
+        final MainActivity myActivity = (MainActivity) getActivity();
+
         form = this.getArguments().getInt("form",0);
         recyclerAM = (RecyclerView) view.findViewById(R.id.f_recycler_AM);
         layoutManagerAM = new LinearLayoutManager(getContext());
@@ -115,7 +118,13 @@ public class PersonasFragment extends Fragment implements Response.Listener<JSON
             @Override
             public void onClick(View view) {
                 idAM = listaAM.get(recyclerAM.getChildAdapterPosition(view)).getIdPersona().trim();
+                if(form ==1){
+                    setData(idAM);
+                    getActivity().onBackPressed();
+
+                }else{
                 consultaAM();
+                }
             }
         });
 
@@ -181,7 +190,7 @@ public class PersonasFragment extends Fragment implements Response.Listener<JSON
                 progressDialog.hide();
                 flag=0;
                 if(form==1){
-                    goTosupervicion();
+                   // goTosupervicion();
                 }else{
                     update_AM(adultoM);
                 }
@@ -270,12 +279,16 @@ public class PersonasFragment extends Fragment implements Response.Listener<JSON
         super.onAttach(context);
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
+
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
     }
+    public interface senderIdAdulto{
+        public void sendAdultoId(String idAM);
 
+    }
     @Override
     public void onDetach() {
         super.onDetach();
@@ -286,5 +299,9 @@ public class PersonasFragment extends Fragment implements Response.Listener<JSON
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    private void setData(String idAM){
+        ((MainActivity)getActivity()).setidAdmayor(idAM);
     }
 }
