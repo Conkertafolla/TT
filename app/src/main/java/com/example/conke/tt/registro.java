@@ -9,12 +9,15 @@ public class registro implements Parcelable {
     protected String valor;
     protected String fecha;
     protected String hora;
+    protected int tipo;
 
-    public registro(String nombre, String valor, String fecha, String hora) {
+    public registro(String nombre, String valor, String fecha, String hora, int tipo) {
         this.nombre = nombre;
         this.valor = valor;
         this.fecha = fecha;
         this.hora = hora;
+        this.tipo=tipo;
+
     }
 
     public registro(){
@@ -27,6 +30,7 @@ public class registro implements Parcelable {
         valor = in.readString();
         fecha = in.readString();
         hora = in.readString();
+        tipo= in.readInt();
     }
 
     public static final Creator<registro> CREATOR = new Creator<registro>() {
@@ -52,6 +56,8 @@ public class registro implements Parcelable {
         parcel.writeString(valor);
         parcel.writeString(fecha);
         parcel.writeString(hora);
+        parcel.writeInt(tipo
+        );
     }
 
     public String getNombre() {
@@ -84,5 +90,12 @@ public class registro implements Parcelable {
 
     public void setHora(String hora) {
         this.hora = hora;
+    }
+
+    public int getTipo() {
+        return tipo;
+    }
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
     }
 }

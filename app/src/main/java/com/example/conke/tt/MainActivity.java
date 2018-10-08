@@ -18,7 +18,7 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, MonitoreoFragment.OnFragmentInteractionListener,
-        PersonasFragment.OnFragmentInteractionListener,AEFragment.OnFragmentInteractionListener{
+        PersonasFragment.OnFragmentInteractionListener,AEFragment.OnFragmentInteractionListener,notification.OnFragmentInteractionListener{
         String idAdmayor=" ";
 
     @Override
@@ -93,7 +93,8 @@ public class MainActivity extends AppCompatActivity
             miFrament = new MonitoreoFragment();
             fragmentseleccionado = true;
         } else if (id == R.id.nav_notification) {
-
+            miFrament = new notification();
+            fragmentseleccionado = true;
 
         } else if (id == R.id.nav_select) {
             Bundle form = new Bundle();
