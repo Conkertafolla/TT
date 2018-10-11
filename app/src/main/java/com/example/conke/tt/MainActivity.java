@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,15 +17,33 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.FirebaseInstanceIdService;
+import com.google.firebase.messaging.FirebaseMessaging;
+
+import org.json.JSONObject;
+
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, MonitoreoFragment.OnFragmentInteractionListener,
-        PersonasFragment.OnFragmentInteractionListener,AEFragment.OnFragmentInteractionListener,notification.OnFragmentInteractionListener{
+        PersonasFragment.OnFragmentInteractionListener,AEFragment.OnFragmentInteractionListener,notification.OnFragmentInteractionListener, Response.ErrorListener, Response.Listener<JSONObject> {
         String idAdmayor=" ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        FirebaseMessaging.getInstance().subscribeToTopic("news");
+        FirebaseInstanceId.getInstance().getToken();
+        String token = FirebaseInstanceId.getInstance().getToken();
+        Log.i("Token",token);
+        registerToken(token);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -139,5 +158,25 @@ public class MainActivity extends AppCompatActivity
 
     public void setidAdmayor(String idAdmayor){
         this.idAdmayor = idAdmayor;
+    }
+
+    public void registerToken(String token){
+        String url =getResources().getString(R.string.ipconfig)+"tokenRegister";
+        HashMap<String, String> postParam= new HashMap<String, String>();
+        postParam.put("token",token);
+        JSONObject jsonObject = new JSONObject(postParam);
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest (Request.Method.POST,url,jsonObject,this,this);
+        VolleySingleton.getInstanciaVolley(this).addToRequestQueue(jsonObjectRequest);
+
+    }
+
+    @Override
+    public void onErrorResponse(VolleyError error) {
+
+    }
+
+    @Override
+    public void onResponse(JSONObject response) {
+
     }
 }
