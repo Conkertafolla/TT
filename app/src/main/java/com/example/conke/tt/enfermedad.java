@@ -22,7 +22,7 @@ public class enfermedad implements Parcelable {
   protected enfermedad(Parcel in) {
     idEnfermedad = new String();
     nombre = new String();
-
+    readParcel(in);
   }
 
   public static final Creator<enfermedad> CREATOR = new Creator<enfermedad>() {

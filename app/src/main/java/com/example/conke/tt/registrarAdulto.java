@@ -6,20 +6,15 @@ import android.app.DialogFragment;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.provider.MediaStore;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.textclassifier.TextClassificationManager;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CalendarView;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -31,11 +26,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
 
@@ -122,7 +117,8 @@ public class registrarAdulto extends AppCompatActivity implements View.OnClickLi
 
           } else {
             peticiontype = 1;
-            registrarAM();
+            //registrarAM();
+              sendEnfermedades();
           }
         }else{
 
@@ -144,7 +140,34 @@ public class registrarAdulto extends AppCompatActivity implements View.OnClickLi
 
   }
 
-  private void showFormError() {
+    private void sendEnfermedades() {
+
+        HashMap<String, JSONArray> postParam= new HashMap<>();
+       if (enfermedades != null){
+           progressDialog = new ProgressDialog(this);
+           String url =getResources().getString(R.string.ipconfig)+"iEnfermedades";
+           JSONArray array=new JSONArray();
+
+           for(int i=0;i<enfermedades.size();i++){
+               JSONObject obj=new JSONObject();
+               try {
+                   obj.put("Id",enfermedades.get(i).getIdEnfermedad());
+                   obj.put("Nombre",enfermedades.get(i).getNombre());
+               } catch (JSONException e) {
+                   e.printStackTrace();
+               }
+               array.put(obj);
+           }
+
+        postParam.put("enfermedades",array);
+           JSONObject jsonObject = new JSONObject(postParam);
+           JsonObjectRequest jsonObjectRequest = new JsonObjectRequest (Request.Method.POST,url,jsonObject,this,this);
+           VolleySingleton.getInstanciaVolley(this).addToRequestQueue(jsonObjectRequest);
+       }
+
+    }
+
+    private void showFormError() {
 
     Toast.makeText(this, "Error en los datos insertados", Toast.LENGTH_LONG).show();
 
@@ -181,8 +204,16 @@ public class registrarAdulto extends AppCompatActivity implements View.OnClickLi
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     if (requestCode == ENFERMEDADES_CODE){
       if (resultCode == Activity.RESULT_OK){
-        enfermedades = data.getParcelableArrayListExtra("enfermedades");
-        Log.i("Size enfermedades", String.valueOf(enfermedades.size()));
+
+          enfermedades = data.getParcelableArrayListExtra("enfermedades");
+          //Bundle bundle = data.getExtras();
+          //enfermedades = (ArrayList<enfermedad>) bundle.getSerializable("enfermedades");
+          enfermedades.size();
+          for(int i=0 ; i<enfermedades.size();i++){
+              Log.i("id",enfermedades.get(i).getIdEnfermedad());
+              Log.i("nombre",enfermedades.get(i).getNombre());
+          }
+      }
 
       }
       if(resultCode == RESULT_CANCELED){
@@ -192,8 +223,6 @@ public class registrarAdulto extends AppCompatActivity implements View.OnClickLi
 
     }
 
-
-  }
 
   private void fillForm(adultoMayor adulto) {
     nombreAM.setText(adulto.getNombre());
@@ -315,6 +344,8 @@ public class registrarAdulto extends AppCompatActivity implements View.OnClickLi
         case 3:
           message="Regitro eliminado exitosamente";
           break;
+        default:
+            message="Regitro realizado exitosamente";
       }
       Toast.makeText(this,message,Toast.LENGTH_LONG).show();
       finish();
