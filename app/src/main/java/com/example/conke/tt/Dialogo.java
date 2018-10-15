@@ -7,9 +7,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 
-/**
- * Created by conke on 16/09/2018.
- */
 
 public class Dialogo extends DialogFragment {
 

@@ -9,9 +9,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
 public class menu extends AppCompatActivity {
-Button gestionarAdultos;
-Button getGestionarEncargado;
-Button getSupervisar;
+    Button gestionarAdultos;
+    Button getGestionarEncargado;
+    Button getSupervisar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

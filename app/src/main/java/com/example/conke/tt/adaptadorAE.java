@@ -40,14 +40,14 @@ public class adaptadorAE extends RecyclerView.Adapter<adaptadorAE.ViewHolderAE> 
     }
 
     public void  setOnclickListener(View.OnClickListener listener){
-           this.listener =listener;
+        this.listener =listener;
 
     }
     @Override
     public void onClick(View view) {
-            if (listener != null){
-                listener.onClick(view);
-            }
+        if (listener != null){
+            listener.onClick(view);
+        }
     }
 
     public class ViewHolderAE extends RecyclerView.ViewHolder {

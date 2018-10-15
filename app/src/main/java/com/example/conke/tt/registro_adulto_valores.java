@@ -50,7 +50,7 @@ public class registro_adulto_valores extends AppCompatActivity implements Respon
         progressDialog.setMessage("Cargando...");
         progressDialog.show();
         if(operationCode ==1){
-         url =getResources().getString(R.string.ipconfig)+"Temperatura/"+idAM;
+            url =getResources().getString(R.string.ipconfig)+"Temperatura/"+idAM;
         }
         if(operationCode ==2) {
             url = getResources().getString(R.string.ipconfig)+"Ritmo/" + idAM;

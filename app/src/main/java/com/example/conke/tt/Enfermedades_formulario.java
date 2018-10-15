@@ -37,6 +37,9 @@ public class Enfermedades_formulario extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent returnIntent = new Intent();
+                //Bundle bundle = new Bundle();
+                //bundle.putSerializable("enfermedades",enfermedades);
+                //returnIntent.putExtras(bundle);
                 returnIntent.putParcelableArrayListExtra("enfermedades",enfermedades);
                 setResult(Activity.RESULT_OK,returnIntent);
                 finish();
@@ -63,8 +66,10 @@ public class Enfermedades_formulario extends AppCompatActivity {
     }
 
     public void agregar(View v){
-
-        enfermedad auxiliar= new enfermedad(String.valueOf(enfermedades.size()+1),String.valueOf(et1.getText()));
+         
+        enfermedad auxiliar= new enfermedad();
+        auxiliar.setIdEnfermedad(String.valueOf(enfermedades.size()+1));
+        auxiliar.setNombre(String.valueOf(et1.getText()));
         enfermedades.add(auxiliar);
         adapter.notifyDataSetChanged();
         et1.setText("");

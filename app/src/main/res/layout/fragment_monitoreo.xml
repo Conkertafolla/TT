@@ -3,9 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.conke.tt.MonitoreoFragment">
+    tools:context="com.example.conke.tt.MonitoreoFragment"
+    android:id="@+id/FragmentMonitoreo">
 
-    <!-- TODO: Update blank fragment layout -->
+
     <RelativeLayout
         android:id="@+id/relativeLayout10"
         android:layout_width="344dp"

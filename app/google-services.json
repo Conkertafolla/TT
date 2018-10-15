@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "822637767394",
+    "firebase_url": "https://ttadultomayor.firebaseio.com",
+    "project_id": "ttadultomayor",
+    "storage_bucket": "ttadultomayor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:822637767394:android:63693de1bcf5b830",
+        "android_client_info": {
+          "package_name": "com.example.conke.tt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "822637767394-lclurp61co8cnh8rv6g4u46vt54sfnkt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.conke.tt",
+            "certificate_hash": "9beaf88c1f0988ed1959532e170051ad2b999d2b"
+          }
+        },
+        {
+          "client_id": "822637767394-thrc9l1q3iqe7ph1qancrmro85p7i7mn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDN_OWK4GW8TIVmavXMsNWM7aRM8JM0Xbc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "822637767394-thrc9l1q3iqe7ph1qancrmro85p7i7mn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

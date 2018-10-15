@@ -33,10 +33,10 @@ public class SupervicionAdulto extends AppCompatActivity  {
 
         btn_visualizar_pulso.setOnClickListener(new View.OnClickListener() {
             @Override
-              public void onClick(View view) {
+            public void onClick(View view) {
                 getPulsos();
 
-             }
+            }
         });
 
         btn_visualizar_temperatura.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +55,6 @@ public class SupervicionAdulto extends AppCompatActivity  {
         i.putExtra("operation",1);
         i.putExtra("idAM",idAM);
         startActivity(i);
-
     }
 
     private void getPulsos() {
