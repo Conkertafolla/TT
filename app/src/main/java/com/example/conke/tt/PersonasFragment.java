@@ -119,8 +119,10 @@ public class PersonasFragment extends Fragment implements Response.Listener<JSON
             public void onClick(View view) {
                 idAM = listaAM.get(recyclerAM.getChildAdapterPosition(view)).getIdPersona().trim();
                 if(form ==1){
-                    setData(idAM);
-                    getActivity().onBackPressed();
+                     setData(idAM);
+                     getActivity().getFragmentManager().popBackStack();
+                     getActivity().onBackPressed();
+
 
                 }else{
                 consultaAM();
@@ -162,6 +164,8 @@ public class PersonasFragment extends Fragment implements Response.Listener<JSON
 
     }
 
+
+
     @Override
     public void onErrorResponse(VolleyError error) {
         Toast.makeText(getContext(),"No se pudo conectar con el servidor",Toast.LENGTH_LONG).show();
@@ -181,7 +185,8 @@ public class PersonasFragment extends Fragment implements Response.Listener<JSON
             try {
                 JSONArray json = response.optJSONArray("Datos_AM");
                 jsonObject=json.getJSONObject(0);
-                adultoM.setIdPersona("IdPersona");
+                adultoM = new adultoMayor();
+                adultoM.setIdPersona(jsonObject.optString("IdPersona"));
                 adultoM.setApMaterno(jsonObject.optString("ApMat"));
                 adultoM.setApPaterno(jsonObject.optString("ApPat"));
                 adultoM.setFechaNacimiento(jsonObject.optString("FechaNac"));
@@ -212,6 +217,7 @@ public class PersonasFragment extends Fragment implements Response.Listener<JSON
                 int tamanio = json.length();
 
                 for (int i=0; i<json.length(); i++){
+                    adultoM = new adultoMayor();
                     jsonObject=json.getJSONObject(i);
                     adultoM.setNombre(jsonObject.optString("Nombre"));
                     adultoM.setIdPersona(jsonObject.optString("idAdMayor"));
@@ -304,4 +310,6 @@ public class PersonasFragment extends Fragment implements Response.Listener<JSON
     private void setData(String idAM){
         ((MainActivity)getActivity()).setidAdmayor(idAM);
     }
+
+
 }

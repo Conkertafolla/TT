@@ -1,88 +1,87 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.conke.tt.LoginActivity">
+    android:background="@drawable/fondoazulado"
+    tools:context="com.example.conke.tt.login">
 
-  <!-- Login progress -->
-  <ProgressBar
-      android:id="@+id/login_progress"
-      style="?android:attr/progressBarStyleLarge"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginBottom="8dp"
-      android:visibility="gone" />
-
-  <ImageView
-      android:layout_width="430dp"
-      android:layout_height="235dp"
-      app:srcCompat="@drawable/logo" />
-
-  <ScrollView
-      android:id="@+id/login_form"
-      android:layout_width="match_parent"
-      android:layout_height="210dp">
-
-    <LinearLayout
-        android:id="@+id/email_login_form"
-        android:layout_width="match_parent"
+    <ProgressBar
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
 
-      <android.support.design.widget.TextInputLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp"
+        app:srcCompat="@drawable/logof1" android:contentDescription="@string/todo" />
 
-        <AutoCompleteTextView
-            android:id="@+id/email"
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="#11000000"
+        android:drawableStart="@drawable/ic_action_user"
+        android:ems="10"
+        android:hint="@string/prompt_email"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textColor="#FFF" />
+
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:layout_alignStart="@+id/editTextEmail"
+        android:layout_below="@+id/editTextEmail"
+        android:layout_marginTop="46dp"
+        android:background="#11000000"
+        android:drawableStart="@drawable/ic_action_name"
+        android:ems="10"
+        android:hint="@string/prompt_password"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textColor="#FFF" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/editTextPassword"
+        android:layout_centerHorizontal="true"
+        app:cardBackgroundColor="@color/colorAccent"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="10dp"
+        android:layout_marginTop="49dp"
+        android:id="@+id/cardView">
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/prompt_email"
-            android:inputType="textEmailAddress"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:text="@string/prompt_email"
-            android:textColorLink="@color/colorPrimary" />
+            android:layout_height="match_parent">
 
-      </android.support.design.widget.TextInputLayout>
+            <TextView
+                android:id="@+id/loginButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/action_sign_in"
+                android:textColor="#FFF"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
 
-      <android.support.design.widget.TextInputLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content">
-
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/prompt_password"
-            android:imeActionId="6"
-            android:imeActionLabel="@string/action_sign_in_short"
-            android:imeOptions="actionUnspecified"
-            android:inputType="textPassword"
-            android:maxLines="1"
-            android:textColorLink="@color/colorPrimary" />
-
-      </android.support.design.widget.TextInputLayout>
-
-      <Button
-          android:id="@+id/email_sign_in_button"
-          style="?android:textAppearanceSmall"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="16dp"
-          android:background="@color/colorBoton"
-          android:baselineAligned="false"
-          android:text="Iniciar Sesión"
-          android:textColor="@color/colorTexto"
-          android:textStyle="bold" />
-
-    </LinearLayout>
-  </ScrollView>
-</LinearLayout>
+</RelativeLayout>

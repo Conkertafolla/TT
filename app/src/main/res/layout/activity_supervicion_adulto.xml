@@ -38,7 +38,7 @@
             android:text="@string/visualizar_temperatura_registro" />
 
         <Button
-            android:id="@+id/btn_localizacion"
+            android:id="@+id/btn_localizacion_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"

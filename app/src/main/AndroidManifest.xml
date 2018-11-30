@@ -16,11 +16,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".menu">
+        <activity android:name=".menu" />
+        <activity android:name=".localizacion" />
+        <activity android:name=".registrarAdulto" />
+        <activity android:name=".login" android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
-        <activity android:name=".registrarAdulto" />
-        <activity android:name=".LoginActivity" />
         <activity android:name=".registro_adulto_encargado" />
         <activity android:name=".SupervicionAdulto" />
         <activity android:name=".Enfermedades_formulario" />
@@ -38,19 +39,20 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <service
-            android:name=".MyFirebaseMessagingService">
+
+        <service android:name=".MyFirebaseMessagingService">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service
-            android:name=".MyFirebaseInstanceIDService">
+        <service android:name=".MyFirebaseInstanceIDService">
             <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
+
 
 
     </application>

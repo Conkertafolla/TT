@@ -21,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -33,6 +34,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Map;
 
 public class registrarAdulto extends AppCompatActivity implements View.OnClickListener,Response.Listener<JSONObject>,Response.ErrorListener,Dialogo.OnDialogListener{
   private static final String CERO = "0";
@@ -117,7 +119,7 @@ public class registrarAdulto extends AppCompatActivity implements View.OnClickLi
 
           } else {
             peticiontype = 1;
-            //registrarAM();
+              registrarAM();
               sendEnfermedades();
           }
         }else{
@@ -250,6 +252,7 @@ public class registrarAdulto extends AppCompatActivity implements View.OnClickLi
     progressDialog.show();
     String url = getResources().getString(R.string.ipconfig)+"dAE/"+idAM.getText().toString().trim();
     JsonObjectRequest jsonObjectRequest = new JsonObjectRequest (Request.Method.DELETE,url,null,this,this);
+
     VolleySingleton.getInstanciaVolley(this).addToRequestQueue(jsonObjectRequest);
 
   }
