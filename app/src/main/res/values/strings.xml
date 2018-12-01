@@ -9,20 +9,19 @@
     <string name="registrar">Registrar</string>
     <string name="nombre">Nombre</string>
     <string name="title_activity_login">TT</string>
-
     <!-- Strings related to login -->
     <string name="prompt_email">Correo electrónico</string>
     <string name="prompt_password">Contraseña</string>
-    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in">Iniciar sesion</string>
+    <string name="action_rec_password">Recuperar contraseña</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">Usuario y/o contraseña incorrecto</string>
     <string name="error_field_required">Falta este campo</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions." </string>
     <string name="logotipo">TODO</string>
+
     <string name="nombre_adulto_mayor">Nombre adulto mayor</string>
     <string name="apellido_paterno">Apellido paterno</string>
     <string name="apellido_materno">Apellido materno</string>
@@ -48,7 +47,7 @@
     <string name="dormitorio_2">Dormitorio 2          </string>
     <string name="sala">Sala        </string>
     <string name="ba_o">Baño        </string>
-    <string name="visualizar_ritmo_registro">visualizar registro ritmo cardiaco</string>
+    <string name="visualizar_ritmo_registro">visualizar registro ritmo cardíaco</string>
     <string name="visualizar_temperatura_registro">visualizar registro temperatura</string>
     <string name="localizacion">localización</string>
     <string name="notificaciones">notificaciones</string>
@@ -71,19 +70,16 @@
     <string name="fecha">Fecha</string>
     <string name="hora">Hora</string>
     <string name="prueba">prueba</string>
-    <string name="ipconfig">http://192.168.1.69:5000/api/v1/</string>
+    <string name="ipconfig">http://192.168.200.2/api/v1/</string>
     <string name="eliminar">Eliminar</string>
-
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
     <string name="action_settings">Ajustes</string>
     <string name="action_logout">Cerrar sesión</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="date">date</string>
     <string name="type">tipo</string>
+    <string name="todo">logo_login</string>
 
 
 </resources>

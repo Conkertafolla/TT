@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -26,6 +27,7 @@ public class registro_adulto_valores extends AppCompatActivity implements Respon
     ArrayList<registro> registros = new ArrayList<>();
     adapterRegistro adaptador;
     LinearLayoutManager layoutManagerR;
+    TextView valorHeader;
     JsonObjectRequest jsonObjectRequest;
     ProgressDialog progressDialog;
     @Override
@@ -35,6 +37,7 @@ public class registro_adulto_valores extends AppCompatActivity implements Respon
         recyclerRegister = findViewById(R.id.recycler_register);
         layoutManagerR= new LinearLayoutManager(this);
         recyclerRegister.setLayoutManager(layoutManagerR);
+        valorHeader=findViewById(R.id.valor_header);
         adaptador = new adapterRegistro(registros);
         recyclerRegister.setAdapter(adaptador);
         idAM =getIntent().getStringExtra("idAM");
@@ -51,9 +54,11 @@ public class registro_adulto_valores extends AppCompatActivity implements Respon
         progressDialog.show();
         if(operationCode ==1){
             url =getResources().getString(R.string.ipconfig)+"Temperatura/"+idAM;
+            valorHeader.setText("Temperatura");
         }
         if(operationCode ==2) {
             url = getResources().getString(R.string.ipconfig)+"Ritmo/" + idAM;
+            valorHeader.setText("Ritmo");
         }
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,url,null,this,this);
         VolleySingleton.getInstanciaVolley(this).addToRequestQueue(jsonObjectRequest);

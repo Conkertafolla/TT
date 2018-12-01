@@ -17,6 +17,7 @@ public class SupervicionAdulto extends AppCompatActivity  {
     String idAM = "";
     Button btn_visualizar_temperatura;
     Button btn_visualizar_pulso;
+    Button btn_visualizar_localizacion;
 
 
     @Override
@@ -30,7 +31,7 @@ public class SupervicionAdulto extends AppCompatActivity  {
         idAM =getIntent().getStringExtra("idAM");
         btn_visualizar_pulso=findViewById(R.id.btn_visualizar_pulso);
         btn_visualizar_temperatura=findViewById(R.id.btn_visualizar_temperatura);
-
+        btn_visualizar_localizacion = findViewById(R.id.btn_localizacion);
         btn_visualizar_pulso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,6 +47,10 @@ public class SupervicionAdulto extends AppCompatActivity  {
 
             }
         });
+
+
+
+
 
 
     }

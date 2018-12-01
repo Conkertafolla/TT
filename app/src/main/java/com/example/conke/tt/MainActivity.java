@@ -1,5 +1,7 @@
 package com.example.conke.tt;
 
+import android.content.ClipData;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -16,6 +18,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -31,18 +34,21 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, MonitoreoFragment.OnFragmentInteractionListener,
-        PersonasFragment.OnFragmentInteractionListener,AEFragment.OnFragmentInteractionListener,notification.OnFragmentInteractionListener, Response.ErrorListener, Response.Listener<JSONObject> {
-        String idAdmayor=" ";
+        PersonasFragment.OnFragmentInteractionListener,AEFragment.OnFragmentInteractionListener,notification.OnFragmentInteractionListener, Response.ErrorListener, Response.Listener<JSONObject>,View.OnClickListener {
+        String idAdmayor="";
+        ClipData.Item logout;
+
+
+        //adultoEncargado adulto;
+        Menu menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         FirebaseMessaging.getInstance().subscribeToTopic("news");
-        FirebaseInstanceId.getInstance().getToken();
-        String token = FirebaseInstanceId.getInstance().getToken();
-        Log.i("Token",token);
-        registerToken(token);
+
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -58,7 +64,15 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //adulto = getIntent().getParcelableExtra("adultoEncargado");
+
+
+
+
+
     }
+
 
     @Override
     public void onBackPressed() {
@@ -73,9 +87,19 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+        super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.main, menu);
+        TextView nameAE = findViewById(R.id.nameAE_menu);
+        TextView mailAE = findViewById(R.id.mailAE_menu);
+        //mailAE.setText(adulto.getCorreo().toString());
+        //nameAE.setText(adulto.getNombre().toString());
+        this.menu = menu;
+
+
         return true;
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -90,9 +114,20 @@ public class MainActivity extends AppCompatActivity
             return true;
         }
 
+        if (id==R.id.logout){
+            closeSession();
+
+        }
+
+
         return super.onOptionsItemSelected(item);
     }
 
+    private void closeSession() {
+        finish();
+        Intent intent = new Intent(this,login.class);
+        startActivity(intent);
+    }
 
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -108,7 +143,6 @@ public class MainActivity extends AppCompatActivity
 
 
         if (id == R.id.nav_inicio) {
-            // Handle the camera action
             miFrament = new MonitoreoFragment();
             fragmentseleccionado = true;
         } else if (id == R.id.nav_notification) {
@@ -177,6 +211,11 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onResponse(JSONObject response) {
+
+    }
+
+    @Override
+    public void onClick(View view) {
 
     }
 }
