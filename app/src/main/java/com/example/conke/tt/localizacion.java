@@ -77,7 +77,7 @@ public class localizacion extends AppCompatActivity implements Response.Listener
         Dormitorio= findViewById(R.id.dormitorio);
         Sala= findViewById(R.id.sala);
         this.mHandler = new Handler();
-        this.mHandler.postDelayed(m_Runnable,5000);
+        this.mHandler.postDelayed(m_Runnable,3000);
 
         Dormitorio.setClickable(false);
         Sala.setClickable(false);
@@ -98,10 +98,16 @@ public class localizacion extends AppCompatActivity implements Response.Listener
         {
             Toast.makeText(localizacion.this,"Actualizando",Toast.LENGTH_SHORT).show();
             getLocalizacion();
-
+            mHandler.postDelayed(this,3000);
         }
 
     };
+    
+    @Override
+    protected void onPause(){
+        super.onPause();
+        mHandler.removeCallbacks(runnable);
+    }
 
     @Override
     public void onBackPressed() {
