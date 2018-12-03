@@ -198,7 +198,7 @@ public class MonitoreoFragment extends Fragment implements Response.Listener<JSO
 
     private void setValues(String idPersona, String temperatura, String ritmo) {
           setData(idPersona);
-          last_heart.setText("Ultimo registro ritmo cardiaco: "+ritmo);
+          last_heart.setText("Ultimo registro ritmo cardíaco: "+ritmo);
           laste_temperature.setText("Ultimo registro ritmo temperatura: "+temperatura);
 
     }
