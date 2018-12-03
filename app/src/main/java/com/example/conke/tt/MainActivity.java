@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity
         ClipData.Item logout;
 
 
-        //adultoEncargado adulto;
+        adultoEncargado adulto;
         Menu menu;
 
     @Override
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        //adulto = getIntent().getParcelableExtra("adultoEncargado");
+        adulto = getIntent().getParcelableExtra("adultoEncargado");
 
 
 
@@ -91,8 +91,8 @@ public class MainActivity extends AppCompatActivity
         getMenuInflater().inflate(R.menu.main, menu);
         TextView nameAE = findViewById(R.id.nameAE_menu);
         TextView mailAE = findViewById(R.id.mailAE_menu);
-        //mailAE.setText(adulto.getCorreo().toString());
-        //nameAE.setText(adulto.getNombre().toString());
+        mailAE.setText(adulto.getCorreo().toString());
+        nameAE.setText(adulto.getNombre().toString());
         this.menu = menu;
 
 

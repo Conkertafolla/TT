@@ -106,7 +106,7 @@ public class localizacion extends AppCompatActivity implements Response.Listener
     @Override
     protected void onPause(){
         super.onPause();
-        mHandler.removeCallbacks(runnable);
+        mHandler.removeCallbacks(m_Runnable);
     }
 
     @Override
